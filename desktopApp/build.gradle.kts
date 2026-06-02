@@ -23,6 +23,10 @@ compose.desktop {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "com.cmp.image"
             packageVersion = "1.0.0"
+
+            macOS { iconFile.set(project.file("src/main/resources/icon.png")) }
+            windows { iconFile.set(project.file("src/main/resources/icon.png")) }
+            linux { iconFile.set(project.file("src/main/resources/icon.png")) }
         }
     }
 }
