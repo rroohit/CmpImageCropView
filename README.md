@@ -6,7 +6,7 @@
 
 **A customizable image cropping component for Compose Multiplatform.**
 
-[![Maven Central](https://img.shields.io/badge/Maven%20Central-0.1.0-blue.svg)](https://search.maven.org/)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.rroohit/CmpImgCropView.svg?label=Maven%20Central&color=blue)](https://central.sonatype.com/artifact/io.github.rroohit/CmpImgCropView)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.3.21-7F52FF.svg?logo=kotlin)](https://kotlinlang.org)
 [![Compose Multiplatform](https://img.shields.io/badge/Compose%20Multiplatform-1.11.0-4285F4.svg)](https://www.jetbrains.com/compose-multiplatform/)
@@ -58,7 +58,7 @@ Android · iOS · Desktop · Web
 
 ## Installation
 
-> ⚠️ **Not yet published to Maven Central.** The coordinates below are final but the artifact is not live yet; they will resolve once version `0.1.0` is published.
+Available on Maven Central.
 
 **`gradle/libs.versions.toml`**
 
