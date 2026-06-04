@@ -40,10 +40,10 @@ Android · iOS · Desktop · Web
 
 | Platform | Demo |
 |----------|------|
-| Android | _add demo here_ |
-| iOS | _add demo here_ |
-| Desktop | _add demo here_ |
-| Web | _add demo here_ |
+| Android | _demo_ |
+| iOS | _demo_ |
+| Desktop | _demo_ |
+| Web | _demo_ |
 
 ## Features
 
