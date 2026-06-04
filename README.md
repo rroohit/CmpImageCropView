@@ -2,7 +2,7 @@
 
 <img src="docs/logo.png" alt="ImageCrop logo" width="160" />
 
-# ImageCrop
+# Compose Multiplatform ImageCropView
 
 **A customizable image cropping component for Compose Multiplatform.**
 
