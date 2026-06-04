@@ -6,15 +6,15 @@ import org.jetbrains.skia.Image as SkiaImage
 import org.jetbrains.skia.Rect
 import org.jetbrains.skia.Surface
 
-actual class ImageData(
+public actual class ImageData(
     internal val encodedBytes: ByteArray,
-    actual val width: Int,
-    actual val height: Int
+    public actual val width: Int,
+    public actual val height: Int
 ) {
-    actual fun copy(): ImageData = ImageData(encodedBytes.copyOf(), width, height)
+    public actual fun copy(): ImageData = ImageData(encodedBytes.copyOf(), width, height)
 }
 
-actual fun cropImage(image: ImageData, x: Int, y: Int, width: Int, height: Int): ImageData {
+public actual fun cropImage(image: ImageData, x: Int, y: Int, width: Int, height: Int): ImageData {
     val src = SkiaImage.makeFromEncoded(image.encodedBytes)
     val surface = Surface.makeRasterN32Premul(width, height)
     surface.canvas.drawImageRect(
@@ -26,7 +26,7 @@ actual fun cropImage(image: ImageData, x: Int, y: Int, width: Int, height: Int):
     return ImageData(data, width, height)
 }
 
-actual fun scaleImage(image: ImageData, targetWidth: Int, targetHeight: Int): ImageData {
+public actual fun scaleImage(image: ImageData, targetWidth: Int, targetHeight: Int): ImageData {
     val src = SkiaImage.makeFromEncoded(image.encodedBytes)
     val surface = Surface.makeRasterN32Premul(targetWidth, targetHeight)
     surface.canvas.drawImageRect(
@@ -39,5 +39,5 @@ actual fun scaleImage(image: ImageData, targetWidth: Int, targetHeight: Int): Im
     return ImageData(data, targetWidth, targetHeight)
 }
 
-actual fun ImageData.toImageBitmap(): ImageBitmap =
+public actual fun ImageData.toImageBitmap(): ImageBitmap =
     SkiaImage.makeFromEncoded(encodedBytes).toComposeImageBitmap()

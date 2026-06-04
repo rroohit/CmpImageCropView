@@ -5,19 +5,16 @@ import androidx.compose.ui.graphics.toComposeImageBitmap
 import java.awt.RenderingHints
 import java.awt.image.BufferedImage
 
-/**
- * JVM implementation of ImageData using BufferedImage.
- */
-actual class ImageData(
+public actual class ImageData(
     internal val bufferedImage: BufferedImage
 ) {
-    actual val width: Int
+    public actual val width: Int
         get() = bufferedImage.width
 
-    actual val height: Int
+    public actual val height: Int
         get() = bufferedImage.height
 
-    actual fun copy(): ImageData {
+    public actual fun copy(): ImageData {
         val copy = BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB)
         val graphics = copy.createGraphics()
         graphics.drawImage(bufferedImage, 0, 0, null)
@@ -26,10 +23,7 @@ actual class ImageData(
     }
 }
 
-/**
- * JVM implementation of image cropping.
- */
-actual fun cropImage(
+public actual fun cropImage(
     image: ImageData,
     x: Int,
     y: Int,
@@ -44,10 +38,7 @@ actual fun cropImage(
     return ImageData(result)
 }
 
-/**
- * JVM implementation of image scaling.
- */
-actual fun scaleImage(
+public actual fun scaleImage(
     image: ImageData,
     targetWidth: Int,
     targetHeight: Int
@@ -75,4 +66,4 @@ actual fun scaleImage(
     return ImageData(scaledImage)
 }
 
-actual fun ImageData.toImageBitmap(): ImageBitmap = bufferedImage.toComposeImageBitmap()
+public actual fun ImageData.toImageBitmap(): ImageBitmap = bufferedImage.toComposeImageBitmap()

@@ -7,17 +7,17 @@ import org.jetbrains.skia.Canvas
 import org.jetbrains.skia.Image as SkiaImage
 import org.jetbrains.skia.Rect
 
-actual class ImageData(
+public actual class ImageData(
     private val _width: Int = 0,
     private val _height: Int = 0,
     internal val encodedBytes: ByteArray = ByteArray(0),
 ) {
-    actual val width: Int get() = _width
-    actual val height: Int get() = _height
-    actual fun copy(): ImageData = ImageData(_width, _height, encodedBytes)
+    public actual val width: Int get() = _width
+    public actual val height: Int get() = _height
+    public actual fun copy(): ImageData = ImageData(_width, _height, encodedBytes)
 }
 
-actual fun cropImage(image: ImageData, x: Int, y: Int, width: Int, height: Int): ImageData {
+public actual fun cropImage(image: ImageData, x: Int, y: Int, width: Int, height: Int): ImageData {
     if (image.encodedBytes.isEmpty()) return ImageData(width, height)
     val src = SkiaImage.makeFromEncoded(image.encodedBytes) ?: return ImageData(width, height)
     val bitmap = Bitmap().apply { allocN32Pixels(width, height) }
@@ -30,7 +30,7 @@ actual fun cropImage(image: ImageData, x: Int, y: Int, width: Int, height: Int):
     return ImageData(width, height, encoded)
 }
 
-actual fun scaleImage(image: ImageData, targetWidth: Int, targetHeight: Int): ImageData {
+public actual fun scaleImage(image: ImageData, targetWidth: Int, targetHeight: Int): ImageData {
     if (image.encodedBytes.isEmpty()) return ImageData(targetWidth, targetHeight)
     val src = SkiaImage.makeFromEncoded(image.encodedBytes) ?: return ImageData(targetWidth, targetHeight)
     val bitmap = Bitmap().apply { allocN32Pixels(targetWidth, targetHeight) }
@@ -43,7 +43,7 @@ actual fun scaleImage(image: ImageData, targetWidth: Int, targetHeight: Int): Im
     return ImageData(targetWidth, targetHeight, encoded)
 }
 
-actual fun ImageData.toImageBitmap(): ImageBitmap {
+public actual fun ImageData.toImageBitmap(): ImageBitmap {
     if (encodedBytes.isEmpty()) return ImageBitmap(width.coerceAtLeast(1), height.coerceAtLeast(1))
     val src = SkiaImage.makeFromEncoded(encodedBytes)
         ?: return ImageBitmap(width.coerceAtLeast(1), height.coerceAtLeast(1))

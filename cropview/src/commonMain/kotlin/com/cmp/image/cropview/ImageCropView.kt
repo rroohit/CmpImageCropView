@@ -42,7 +42,7 @@ import kotlin.math.sqrt
  * val result: ImageData = imageCrop.onCrop()
  * ```
  */
-class ImageCrop(
+public class ImageCrop(
     internal var imageData: ImageData
 ) : OnCrop {
 
@@ -59,12 +59,12 @@ class ImageCrop(
         cropUtil.resetCropIRect()
     }
 
-    companion object {
+    public companion object {
         /**
          * A [Saver] that persists the crop rectangle, zoom, and pan across configuration changes
          * (e.g. rotation). Pass to [rememberSaveable] or use [rememberSaveableImageCrop] directly.
          */
-        fun saver(imageData: ImageData): Saver<ImageCrop, Any> = Saver(
+        public fun saver(imageData: ImageData): Saver<ImageCrop, Any> = Saver(
             save = { imageCrop -> imageCrop.cropUtil.toSnapshot() },
             restore = { snapshot ->
                 ImageCrop(imageData).also { imageCrop ->
@@ -90,7 +90,7 @@ class ImageCrop(
  * for rotation-safe state.
  */
 @Composable
-fun rememberImageCrop(imageData: ImageData): ImageCrop =
+public fun rememberImageCrop(imageData: ImageData): ImageCrop =
     remember(imageData) { ImageCrop(imageData) }
 
 /**
@@ -98,7 +98,7 @@ fun rememberImageCrop(imageData: ImageData): ImageCrop =
  * rotation and Activity recreation. Resets automatically when [imageData] changes.
  */
 @Composable
-fun rememberSaveableImageCrop(imageData: ImageData): ImageCrop =
+public fun rememberSaveableImageCrop(imageData: ImageData): ImageCrop =
     rememberSaveable(imageData, saver = ImageCrop.saver(imageData)) { ImageCrop(imageData) }
 
 
@@ -117,7 +117,7 @@ fun rememberSaveableImageCrop(imageData: ImageData): ImageCrop =
  * @param enableZoom  Enables pinch-to-zoom and double-tap zoom on the image.
  */
 @Composable
-fun ImageCropView(
+public fun ImageCropView(
     imageCrop: ImageCrop,
     modifier: Modifier = Modifier,
     guideLineColor: Color = Color(0xFFD1CBE2),
@@ -359,7 +359,7 @@ fun ImageCropView(
  * Provides imperative access to the crop operation and view reset.
  * Implemented by [ImageCrop].
  */
-interface OnCrop {
+public interface OnCrop {
     /**
      * Performs the crop and returns the resulting [ImageData].
      *
@@ -367,10 +367,10 @@ interface OnCrop {
      *                        coordinates and crops at full resolution. When `false`, crops the
      *                        canvas-scaled version (lower quality, use only if you need canvas-pixel output).
      */
-    fun onCrop(cropSourceImage: Boolean = true): ImageData
+    public fun onCrop(cropSourceImage: Boolean = true): ImageData
 
     /** Resets the crop rectangle and zoom to their initial state. */
-    fun resetView()
+    public fun resetView()
 }
 
 

@@ -5,28 +5,22 @@ import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.core.graphics.scale
 
-/**
- * Android implementation of ImageData using Bitmap.
- */
-actual class ImageData(
+public actual class ImageData(
     internal val bitmap: Bitmap
 ) {
-    actual val width: Int
+    public actual val width: Int
         get() = bitmap.width
 
-    actual val height: Int
+    public actual val height: Int
         get() = bitmap.height
 
-    actual fun copy(): ImageData {
+    public actual fun copy(): ImageData {
         val config = bitmap.config ?: Bitmap.Config.ARGB_8888
         return ImageData(bitmap.copy(config, true))
     }
 }
 
-/**
- * Android implementation of image cropping using Bitmap.
- */
-actual fun cropImage(
+public actual fun cropImage(
     image: ImageData,
     x: Int,
     y: Int,
@@ -37,10 +31,7 @@ actual fun cropImage(
     return ImageData(croppedBitmap)
 }
 
-/**
- * Android implementation of image scaling using Bitmap.scale.
- */
-actual fun scaleImage(
+public actual fun scaleImage(
     image: ImageData,
     targetWidth: Int,
     targetHeight: Int
@@ -49,4 +40,4 @@ actual fun scaleImage(
     return ImageData(scaledBitmap)
 }
 
-actual fun ImageData.toImageBitmap(): ImageBitmap = bitmap.asImageBitmap()
+public actual fun ImageData.toImageBitmap(): ImageBitmap = bitmap.asImageBitmap()
