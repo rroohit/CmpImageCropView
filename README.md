@@ -34,13 +34,16 @@ Android · iOS · Desktop · Web
 <!--
   Add a screen-recording (GIF or MP4) per platform below.
   Easiest way on GitHub: open a new issue, drag-and-drop the video into the
-  comment box, copy the generated URL, and paste it into the matching cell.
+  comment box, copy the generated user-attachments URL, then wrap it in a
+  <video> tag in the matching cell, e.g.:
+      <video src="https://github.com/user-attachments/assets/XXXX" controls width="300"></video>
+  A bare URL only auto-embeds a player on its own line, NOT inside a table cell.
   Alternatively, commit the files under docs/ and reference them here.
 -->
 
 | Platform | Demo |
 |----------|----|
-| Android | https://github.com/user-attachments/assets/0feb8c47-e96c-455a-877a-ffa82378630a |
+| Android | <video src="https://github.com/user-attachments/assets/0feb8c47-e96c-455a-877a-ffa82378630a" controls width="300"></video> |
 | iOS | _demo_ |
 | Desktop | _demo_ |
 | Web | _demo_ |
