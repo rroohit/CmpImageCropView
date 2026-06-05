@@ -39,8 +39,8 @@ Android · iOS · Desktop · Web
 -->
 
 | Platform | Demo |
-|----------|------|
-| Android | _demo_ |
+|----------|----|
+| Android | https://github.com/user-attachments/assets/0feb8c47-e96c-455a-877a-ffa82378630a |
 | iOS | _demo_ |
 | Desktop | _demo_ |
 | Web | _demo_ |

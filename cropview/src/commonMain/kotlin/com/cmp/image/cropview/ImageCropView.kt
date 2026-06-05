@@ -65,10 +65,11 @@ public class ImageCrop(
          * (e.g. rotation). Pass to [rememberSaveable] or use [rememberSaveableImageCrop] directly.
          */
         public fun saver(imageData: ImageData): Saver<ImageCrop, Any> = Saver(
-            save = { imageCrop -> imageCrop.cropUtil.toSnapshot() },
-            restore = { snapshot ->
+            save = { imageCrop -> imageCrop.cropUtil.toSnapshot()?.toList() },
+            restore = { saved ->
                 ImageCrop(imageData).also { imageCrop ->
-                    if (snapshot is CropStateSnapshot && snapshot.bitmapWidth == imageData.width && snapshot.bitmapHeight == imageData.height) {
+                    val snapshot = (saved as? List<*>)?.let(CropStateSnapshot::fromList)
+                    if (snapshot != null && snapshot.bitmapWidth == imageData.width && snapshot.bitmapHeight == imageData.height) {
                         imageCrop.cropUtil.pendingSnapshot = snapshot
                     }
                 }
