@@ -43,7 +43,7 @@ Android · iOS · Desktop · Web
 
 | Platform | Demo |
 |----------|----|
-| Android | <video src="https://github.com/user-attachments/assets/0feb8c47-e96c-455a-877a-ffa82378630a" controls width="300"></video> |
+| Android | _demo_ |
 | iOS | _demo_ |
 | Desktop | _demo_ |
 | Web | _demo_ |
