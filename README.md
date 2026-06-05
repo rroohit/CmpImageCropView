@@ -36,7 +36,7 @@ Android · iOS · Desktop · Web
 | Android | <video src="https://github.com/user-attachments/assets/995fdcb3-db5f-47d9-9799-9eff0e83e1fb" controls width="300"></video> |
 | iOS | _demo_ |
 | Desktop | <video src="https://github.com/user-attachments/assets/01c3a05b-8644-4ae5-9f55-4848fd52da34" controls width="300"></video> |
-| Web | _demo_ |
+| Web | <video src="https://github.com/user-attachments/assets/9d870e65-d532-41fe-a01c-0bc427e4b847" controls width="300"></video> |
 
 ## Features
 
